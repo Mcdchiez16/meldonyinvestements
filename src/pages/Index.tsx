@@ -225,15 +225,16 @@ const Index = () => {
               </h2>
               
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Meldony Investments (Private) Limited is a Zimbabwe-registered 
-                multi-industry investment company with operations across the 
-                continent's most vital economic sectors.
+                Meldony Investments Private Limited is a duly registered entity 
+                under the Zimbabwe Company Registration Act, operating with a solid 
+                foundation and compliance record.
               </p>
               
               <p className="text-muted-foreground leading-relaxed mb-10">
-                From mining and energy to technology and agriculture, we 
-                strategically invest in businesses that drive growth, create 
-                employment, and deliver lasting positive impact for communities.
+                Our core focus is delivering reliable and innovative investment 
+                solutions tailored to meet the dynamic needs of our clients. We 
+                pride ourselves on maintaining the highest standards of corporate 
+                governance and transparency in all our dealings.
               </p>
 
               <Link

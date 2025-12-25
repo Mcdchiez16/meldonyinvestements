@@ -14,12 +14,12 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["+263 XXX XXX XXX", "+263 XXX XXX XXX"],
+    details: ["+263 772 210 507", "+260 975 789 428"],
   },
   {
     icon: Mail,
     title: "Email",
-    details: ["info@meldonyinvestments.com", "partnerships@meldonyinvestments.com"],
+    details: ["info@meldonyinvestments.co.zw"],
   },
   {
     icon: Clock,
