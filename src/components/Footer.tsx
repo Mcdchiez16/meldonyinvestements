@@ -56,9 +56,9 @@ export const Footer = () => {
               </div>
             </Link>
             <p className="text-muted-foreground max-w-sm mb-6 leading-relaxed">
-              A diversified investment and trading company powering growth and
-              development across Zimbabwe and Africa through strategic partnerships
-              across 10+ industry sectors.
+              A duly registered entity under the Zimbabwe Company Registration Act, 
+              delivering reliable and innovative investment solutions with the highest 
+              standards of corporate governance.
             </p>
 
             {/* Social Links */}
