@@ -16,12 +16,6 @@ const leaders = [
     bio: "Expert in capital markets and strategic acquisitions with a proven track record in portfolio management.",
     initials: "MC",
   },
-  {
-    name: "Diana Thandiwe Mpofu",
-    title: "Director & Operations Executive",
-    bio: "Experienced operations leader specializing in multi-sector business development and stakeholder relations.",
-    initials: "DM",
-  },
 ];
 
 const whyChooseUs = [
@@ -64,7 +58,7 @@ const LeadershipPage = () => {
       {/* Leadership Grid */}
       <section className="section-padding">
         <div className="container-wide">
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-24">
+          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-24">
             {leaders.map((leader, index) => (
               <motion.div
                 key={leader.name}
