@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Divisions", href: "#divisions" },
-  { name: "Leadership", href: "#leadership" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Divisions", href: "/divisions" },
+  { name: "Leadership", href: "/leadership" },
+  { name: "Projects", href: "/projects" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,9 +39,9 @@ export const Navbar = () => {
       <nav className="container-wide">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-gold-gradient flex items-center justify-center">
-              <span className="text-navy-dark font-display font-bold text-xl">M</span>
+          <Link to="/" className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
+              <span className="text-accent-foreground font-display font-bold text-xl">M</span>
             </div>
             <div className="hidden sm:block">
               <span className="font-display text-xl font-semibold text-foreground">
@@ -49,26 +51,32 @@ export const Navbar = () => {
                 Investments
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-accent transition-colors duration-200 relative group"
+                to={link.href}
+                className={`text-sm font-medium transition-colors duration-200 relative group ${
+                  location.pathname === link.href
+                    ? "text-accent"
+                    : "text-muted-foreground hover:text-accent"
+                }`}
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
-              </a>
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ${
+                  location.pathname === link.href ? "w-full" : "w-0 group-hover:w-full"
+                }`} />
+              </Link>
             ))}
-            <a
-              href="#contact"
-              className="px-6 py-2.5 bg-gold-gradient text-navy-dark font-semibold text-sm rounded-lg hover:shadow-lg hover:shadow-accent/25 transition-all duration-300 hover:-translate-y-0.5"
+            <Link
+              to="/contact"
+              className="px-6 py-2.5 bg-accent text-accent-foreground font-semibold text-sm rounded-lg hover:bg-gold-dark transition-all duration-300 hover:-translate-y-0.5"
             >
               Partner With Us
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -93,28 +101,38 @@ export const Navbar = () => {
             >
               <div className="py-6 space-y-4">
                 {navLinks.map((link, index) => (
-                  <motion.a
+                  <motion.div
                     key={link.name}
-                    href={link.href}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    onClick={() => setIsOpen(false)}
-                    className="block px-4 py-2 text-foreground hover:text-accent hover:bg-muted/50 rounded-lg transition-all"
                   >
-                    {link.name}
-                  </motion.a>
+                    <Link
+                      to={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`block px-4 py-2 rounded-lg transition-all ${
+                        location.pathname === link.href
+                          ? "text-accent bg-accent/10"
+                          : "text-foreground hover:text-accent hover:bg-muted/50"
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
                 ))}
-                <motion.a
-                  href="#contact"
+                <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6 }}
-                  onClick={() => setIsOpen(false)}
-                  className="block mx-4 mt-4 px-6 py-3 bg-gold-gradient text-navy-dark font-semibold text-center rounded-lg"
                 >
-                  Partner With Us
-                </motion.a>
+                  <Link
+                    to="/contact"
+                    onClick={() => setIsOpen(false)}
+                    className="block mx-4 mt-4 px-6 py-3 bg-accent text-accent-foreground font-semibold text-center rounded-lg"
+                  >
+                    Partner With Us
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
           )}

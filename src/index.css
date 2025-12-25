@@ -4,56 +4,51 @@
 
 @layer base {
   :root {
-    /* Meldony Investments Corporate Design System */
-    --background: 220 30% 6%;
-    --foreground: 45 30% 95%;
+    /* Meldony Investments Corporate Design System - Premium Clean */
+    --background: 220 20% 7%;
+    --foreground: 45 20% 96%;
 
-    --card: 220 25% 10%;
-    --card-foreground: 45 30% 95%;
+    --card: 220 18% 11%;
+    --card-foreground: 45 20% 96%;
 
-    --popover: 220 25% 10%;
-    --popover-foreground: 45 30% 95%;
+    --popover: 220 18% 11%;
+    --popover-foreground: 45 20% 96%;
 
     /* Deep Navy Blue Primary */
-    --primary: 220 60% 20%;
-    --primary-foreground: 45 30% 95%;
+    --primary: 220 50% 22%;
+    --primary-foreground: 45 20% 96%;
 
     /* Gold Accent */
-    --secondary: 42 70% 50%;
-    --secondary-foreground: 220 30% 6%;
+    --secondary: 42 65% 52%;
+    --secondary-foreground: 220 20% 7%;
 
-    --muted: 220 20% 15%;
-    --muted-foreground: 220 15% 60%;
+    --muted: 220 15% 16%;
+    --muted-foreground: 220 12% 55%;
 
     /* Gold Accent for highlights */
-    --accent: 42 80% 55%;
-    --accent-foreground: 220 30% 6%;
+    --accent: 42 75% 55%;
+    --accent-foreground: 220 20% 7%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 20% 18%;
-    --input: 220 20% 18%;
-    --ring: 42 70% 50%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 42 65% 52%;
 
     --radius: 0.5rem;
 
     /* Custom tokens */
-    --gold: 42 80% 55%;
-    --gold-dark: 42 70% 40%;
-    --navy: 220 60% 12%;
-    --navy-light: 220 40% 20%;
-    --navy-dark: 220 60% 6%;
-
-    /* Gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(42, 80%, 55%) 0%, hsl(38, 70%, 45%) 100%);
-    --gradient-navy: linear-gradient(180deg, hsl(220, 60%, 12%) 0%, hsl(220, 60%, 6%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(220, 60%, 8%) 0%, hsl(220, 50%, 15%) 50%, hsl(220, 60%, 8%) 100%);
+    --gold: 42 75% 55%;
+    --gold-dark: 42 60% 42%;
+    --navy: 220 45% 14%;
+    --navy-light: 220 30% 20%;
+    --navy-dark: 220 20% 7%;
 
     /* Shadows */
-    --shadow-gold: 0 10px 40px -10px hsl(42 80% 55% / 0.3);
-    --shadow-card: 0 25px 50px -12px hsl(220 60% 6% / 0.5);
-    --shadow-elegant: 0 4px 20px hsl(220 60% 6% / 0.4);
+    --shadow-gold: 0 10px 40px -10px hsl(42 75% 55% / 0.25);
+    --shadow-card: 0 25px 50px -12px hsl(220 20% 7% / 0.5);
+    --shadow-elegant: 0 4px 20px hsl(220 20% 7% / 0.4);
   }
 }
 
@@ -73,12 +68,7 @@
 
 @layer components {
   .gold-text {
-    @apply text-transparent bg-clip-text;
-    background-image: var(--gradient-gold);
-  }
-
-  .gold-border {
-    border-image: var(--gradient-gold) 1;
+    @apply text-accent;
   }
 
   .section-padding {
@@ -87,6 +77,14 @@
 
   .container-wide {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply px-8 py-4 bg-accent text-accent-foreground font-semibold rounded-lg hover:bg-gold-dark transition-all duration-300 hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-4 border-2 border-accent/30 text-foreground font-semibold rounded-lg hover:bg-accent/10 hover:border-accent/50 transition-all duration-300;
   }
 }
 

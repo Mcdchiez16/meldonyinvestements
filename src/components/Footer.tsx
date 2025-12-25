@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Facebook,
   Twitter,
@@ -9,22 +9,22 @@ import {
 
 const footerLinks = {
   company: [
-    { name: "About Us", href: "#about" },
-    { name: "Our Divisions", href: "#divisions" },
-    { name: "Leadership", href: "#leadership" },
-    { name: "Projects", href: "#projects" },
+    { name: "About Us", href: "/about" },
+    { name: "Our Divisions", href: "/divisions" },
+    { name: "Leadership", href: "/leadership" },
+    { name: "Projects", href: "/projects" },
   ],
   sectors: [
-    { name: "Investment & Capital", href: "#divisions" },
-    { name: "Mining & Energy", href: "#divisions" },
-    { name: "Construction", href: "#divisions" },
-    { name: "Agriculture", href: "#divisions" },
+    { name: "Fuel & Energy", href: "/divisions" },
+    { name: "Mining & Minerals", href: "/divisions" },
+    { name: "Construction", href: "/divisions" },
+    { name: "Agriculture", href: "/divisions" },
   ],
   resources: [
-    { name: "Partner With Us", href: "#contact" },
-    { name: "Investor Relations", href: "#contact" },
-    { name: "News & Updates", href: "#" },
-    { name: "Careers", href: "#" },
+    { name: "Partner With Us", href: "/contact" },
+    { name: "Investor Relations", href: "/contact" },
+    { name: "News & Updates", href: "/" },
+    { name: "Careers", href: "/" },
   ],
 };
 
@@ -43,9 +43,9 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <a href="#home" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-gold-gradient flex items-center justify-center">
-                <span className="text-navy-dark font-display font-bold text-xl">M</span>
+            <Link to="/" className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
+                <span className="text-accent-foreground font-display font-bold text-xl">M</span>
               </div>
               <div>
                 <span className="font-display text-xl font-semibold text-foreground">
@@ -55,10 +55,11 @@ export const Footer = () => {
                   Investments
                 </span>
               </div>
-            </a>
+            </Link>
             <p className="text-muted-foreground max-w-sm mb-6 leading-relaxed">
               A diversified investment and trading company powering growth and
-              development across Zimbabwe and Africa through strategic partnerships.
+              development across Zimbabwe and Africa. Specializing in fuel, energy,
+              and strategic partnerships.
             </p>
 
             {/* Social Links */}
@@ -82,12 +83,12 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-muted-foreground hover:text-accent transition-colors text-sm"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -98,12 +99,12 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.sectors.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-muted-foreground hover:text-accent transition-colors text-sm"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -114,13 +115,13 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-muted-foreground hover:text-accent transition-colors text-sm inline-flex items-center gap-1 group"
                   >
                     {link.name}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
