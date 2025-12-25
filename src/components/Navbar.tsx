@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -40,9 +41,7 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-              <span className="text-accent-foreground font-display font-bold text-xl">M</span>
-            </div>
+            <img src={logo} alt="Meldony Investments" className="h-12 w-auto" />
             <div className="hidden sm:block">
               <span className="font-display text-xl font-semibold text-foreground">
                 Meldony

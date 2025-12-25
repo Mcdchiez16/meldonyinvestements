@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Fuel, Gauge, Truck } from "lucide-react";
+import { ArrowRight, Globe } from "lucide-react";
 import { useEffect, useState } from "react";
+import logo from "@/assets/logo.png";
 
 const stats = [
-  { icon: Fuel, value: 10, suffix: "+", label: "Distribution Points" },
-  { icon: Gauge, value: 100, suffix: "M+", label: "Litres Distributed" },
-  { icon: Truck, value: 50, suffix: "+", label: "Fleet Vehicles" },
+  { value: 10, suffix: "+", label: "Business Sectors" },
+  { value: 100, suffix: "+", label: "Projects Delivered" },
+  { value: 15, suffix: "+", label: "Years Experience" },
 ];
 
 const CountUp = ({ end, suffix = "" }: { end: number; suffix?: string }) => {
@@ -48,22 +49,33 @@ export const Hero = () => {
       {/* Subtle decorative elements */}
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.05)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.05)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
       <div className="container-wide relative z-10 pt-24 pb-16">
         <div className="max-w-5xl mx-auto text-center">
+          {/* Logo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="mb-8"
+          >
+            <img 
+              src={logo} 
+              alt="Meldony Investments" 
+              className="w-32 h-32 mx-auto object-contain"
+            />
+          </motion.div>
+
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-accent/30 bg-accent/10 mb-8"
           >
-            <Fuel className="w-4 h-4 text-accent" />
+            <Globe className="w-4 h-4 text-accent" />
             <span className="text-sm font-medium text-accent">
-              Fuel, Energy & Petroleum Division
+              Zimbabwe's Premier Investment Group
             </span>
           </motion.div>
 
@@ -71,12 +83,13 @@ export const Hero = () => {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6"
           >
-            Powering <span className="gold-text">Zimbabwe</span>{" "}
-            Through Reliable{" "}
-            <span className="gold-text">Energy Solutions</span>
+            Powering Growth Across{" "}
+            <span className="gold-text">Africa</span>{" "}
+            Through Strategic{" "}
+            <span className="gold-text">Investments</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -86,16 +99,16 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed"
           >
-            Meldony Investments is Zimbabwe's trusted partner in fuel distribution, 
-            petroleum logistics, and energy infrastructure. We ensure reliable supply 
-            chains that power businesses and communities across the nation.
+            Meldony Investments is a diversified investment and trading company
+            driving economic development across Zimbabwe and Africa through
+            strategic partnerships in mining, energy, infrastructure, and beyond.
           </motion.p>
 
           {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
           >
             <Link
@@ -117,7 +130,7 @@ export const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto"
           >
             {stats.map((stat, index) => (
@@ -125,12 +138,11 @@ export const Hero = () => {
                 key={stat.label}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 1 + index * 0.2 }}
+                transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                 className="relative group"
               >
                 <div className="relative p-6 rounded-2xl border border-border bg-card/50">
-                  <stat.icon className="w-8 h-8 text-accent mx-auto mb-3" />
-                  <div className="text-4xl font-display font-bold text-foreground mb-1">
+                  <div className="text-4xl font-display font-bold text-accent mb-1">
                     <CountUp end={stat.value} suffix={stat.suffix} />
                   </div>
                   <div className="text-sm text-muted-foreground">{stat.label}</div>
@@ -145,7 +157,7 @@ export const Hero = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
+        transition={{ delay: 1.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <motion.div
