@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Globe } from "lucide-react";
 import { useEffect, useState } from "react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 const stats = [
   { value: 10, suffix: "+", label: "Business Sectors" },

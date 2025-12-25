@@ -23,7 +23,7 @@ import {
   Target,
   Briefcase,
 } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 const sectors = [
   { icon: TrendingUp, name: "Investment & Capital Markets" },
