@@ -6,6 +6,7 @@ import {
   Instagram,
   ArrowUpRight,
 } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const footerLinks = {
   company: [
@@ -15,8 +16,8 @@ const footerLinks = {
     { name: "Projects", href: "/projects" },
   ],
   sectors: [
-    { name: "Fuel & Energy", href: "/divisions" },
-    { name: "Mining & Minerals", href: "/divisions" },
+    { name: "Investment & Capital", href: "/divisions" },
+    { name: "Mining & Energy", href: "/divisions" },
     { name: "Construction", href: "/divisions" },
     { name: "Agriculture", href: "/divisions" },
   ],
@@ -44,9 +45,7 @@ export const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                <span className="text-accent-foreground font-display font-bold text-xl">M</span>
-              </div>
+              <img src={logo} alt="Meldony Investments" className="h-12 w-auto" />
               <div>
                 <span className="font-display text-xl font-semibold text-foreground">
                   Meldony
@@ -58,8 +57,8 @@ export const Footer = () => {
             </Link>
             <p className="text-muted-foreground max-w-sm mb-6 leading-relaxed">
               A diversified investment and trading company powering growth and
-              development across Zimbabwe and Africa. Specializing in fuel, energy,
-              and strategic partnerships.
+              development across Zimbabwe and Africa through strategic partnerships
+              across 10+ industry sectors.
             </p>
 
             {/* Social Links */}
