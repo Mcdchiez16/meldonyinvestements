@@ -110,9 +110,7 @@ const Index = () => {
               duration: 0.6,
               delay: 0.2
             }} className="text-lg sm:text-xl text-muted-foreground max-w-xl leading-relaxed mb-10">
-                A diversified investment holding company driving sustainable 
-                economic development through strategic partnerships in mining, 
-                energy, infrastructure, and beyond.
+                Meldony Investments Private Limited is a duly registered entity under the Zimbabwe Company Registration Act, operating with a solid foundation and compliance record. Our core focus is delivering reliable and innovative investment solutions tailored to meet the dynamic needs of our clients.
               </motion.p>
 
               {/* CTA Buttons */}
@@ -168,13 +166,15 @@ const Index = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div initial={{
+        <motion.button initial={{
         opacity: 0
       }} animate={{
         opacity: 1
       }} transition={{
         delay: 1
-      }} className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-3">
+      }} onClick={() => {
+        document.getElementById('about-section')?.scrollIntoView({ behavior: 'smooth' });
+      }} className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
           <span className="text-xs text-muted-foreground uppercase tracking-widest">Scroll</span>
           <motion.div animate={{
           y: [0, 6, 0]
@@ -183,7 +183,7 @@ const Index = () => {
           repeat: Infinity,
           ease: "easeInOut"
         }} className="w-px h-10 bg-accent/30" />
-        </motion.div>
+        </motion.button>
       </section>
 
       {/* Sectors Strip */}
@@ -200,7 +200,7 @@ const Index = () => {
       </section>
 
       {/* About Section - Asymmetric Layout */}
-      <section className="section-padding">
+      <section id="about-section" className="section-padding">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             {/* Left Text */}
