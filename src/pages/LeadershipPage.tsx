@@ -7,14 +7,20 @@ const leaders = [
   {
     name: "Melody Nyasha Nemaire",
     title: "Director & Chief Executive",
-    bio: "Visionary leader with extensive experience in investment strategy and corporate governance across African markets.",
+    bio: "Founding director with visionary leadership in investment strategy and corporate governance across African markets.",
     initials: "MN",
   },
   {
     name: "Mcdonald Tafadzwa Chizhowezha",
-    title: "Director & Investment Executive",
-    bio: "Expert in capital markets and strategic acquisitions with a proven track record in portfolio management.",
+    title: "Director & Operations Executive",
+    bio: "Founding director with expertise in operations management and strategic business development.",
     initials: "MC",
+  },
+  {
+    name: "Diana Thandiwe Mpofu",
+    title: "Director & Investment Executive",
+    bio: "Founding director specializing in capital markets and strategic acquisitions with proven portfolio management expertise.",
+    initials: "DM",
   },
 ];
 
@@ -58,7 +64,7 @@ const LeadershipPage = () => {
       {/* Leadership Grid */}
       <section className="section-padding">
         <div className="container-wide">
-          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-24">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-24">
             {leaders.map((leader, index) => (
               <motion.div
                 key={leader.name}

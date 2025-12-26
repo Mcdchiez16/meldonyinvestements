@@ -18,55 +18,55 @@ import { Footer } from "@/components/Footer";
 
 const divisions = [
   {
-    icon: Fuel,
-    title: "Fuel, Energy & Petroleum",
-    description: "Our flagship division powering progress through reliable energy solutions, petroleum distribution, and strategic fuel supply chains across Zimbabwe.",
-    featured: true,
-  },
-  {
     icon: TrendingUp,
     title: "Investment & Capital Markets",
-    description: "Strategic portfolio management and capital allocation across diverse asset classes.",
+    description: "Strategic investments in public and private companies, capital markets, and property to unlock value and drive sustainable returns.",
+    featured: true,
   },
   {
     icon: Building2,
     title: "Engineering & Construction",
-    description: "Infrastructure development and engineering solutions for modern Africa.",
+    description: "Design, construction, and maintenance of dams, bridges, roads, railways, harbours, factories, warehouses, and residential properties.",
   },
   {
     icon: Mountain,
     title: "Mining & Mineral Processing",
-    description: "Responsible extraction and processing of Zimbabwe's rich mineral resources.",
+    description: "Processing and marketing of gold, diamond, nickel, copper, and other precious minerals with responsible extraction practices.",
+  },
+  {
+    icon: Fuel,
+    title: "Fuel, Energy & Petroleum",
+    description: "Distribution of petrol, diesel, LPG, oils, and lubricants. Solar energy, power generation, and renewable energy solutions.",
   },
   {
     icon: Truck,
     title: "Transport & Logistics",
-    description: "Efficient movement of goods and resources across the continent.",
+    description: "Local and international transportation, freight services, clearing agents, container services, and tour operations.",
   },
   {
     icon: Home,
-    title: "Property Development",
-    description: "Creating sustainable residential and commercial spaces for growing communities.",
+    title: "Property Development & Management",
+    description: "Property sales, development, letting, asset evaluation, building facilities management, and project consulting.",
   },
   {
     icon: Wheat,
     title: "Agriculture & Farming",
-    description: "Modern farming techniques driving food security and agricultural exports.",
+    description: "Commercial crop production, livestock breeding, poultry, fisheries, and agricultural processing including abattoirs and feed production.",
   },
   {
     icon: Cpu,
     title: "IT & Technology",
-    description: "Digital transformation solutions for businesses and government institutions.",
+    description: "IT products and services, networking solutions, software development, hardware assembly, and digital transformation solutions.",
   },
   {
     icon: Factory,
     title: "Manufacturing & Trading",
-    description: "Value-added manufacturing and strategic trading partnerships.",
+    description: "General trading, importing, exporting, commodity brokerage, iron casting, metals, textiles, clothing, and value-added manufacturing.",
   },
   {
     icon: Banknote,
     title: "Money Transfer & Financial Services",
-    description: "Accessible financial services connecting families and businesses.",
+    description: "Money transfer, exchange services, domestic remittance, safe custody, and small business development support.",
   },
 ];
 

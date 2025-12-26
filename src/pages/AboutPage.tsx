@@ -1,13 +1,20 @@
 import { motion } from "framer-motion";
-import { Target, Eye, Heart, Shield, Users, Lightbulb } from "lucide-react";
+import { Target, Eye, Heart, Shield, Users, Lightbulb, CheckCircle2, Calendar, Building } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 const values = [
-  { icon: Shield, title: "Integrity", description: "Transparent and ethical business practices" },
+  { icon: Shield, title: "Integrity", description: "Transparent and ethical business practices in all dealings" },
   { icon: Users, title: "Partnership", description: "Building lasting relationships with stakeholders" },
-  { icon: Lightbulb, title: "Innovation", description: "Embracing change and driving progress" },
+  { icon: Lightbulb, title: "Innovation", description: "Delivering reliable and innovative solutions" },
   { icon: Heart, title: "Impact", description: "Creating value for communities and economies" },
+];
+
+const companyHighlights = [
+  "Duly registered under the Zimbabwe Company Registration Act",
+  "200,000 ordinary shares authorized capital",
+  "Highest standards of corporate governance",
+  "Full legal compliance and transparency",
 ];
 
 const AboutPage = () => {
@@ -43,7 +50,7 @@ const AboutPage = () => {
       {/* Main Content */}
       <section className="section-padding">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-start mb-20">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -52,10 +59,16 @@ const AboutPage = () => {
             >
               <p className="text-foreground/80 text-lg leading-relaxed mb-6">
                 <span className="font-semibold text-accent">Meldony Investments (Private) Limited</span>{" "}
-                is a Zimbabwe-registered multi-industry investment company that operates
-                across the continent's most vital economic sectors. From mining and energy
-                to technology and agriculture, we invest in businesses that power growth
-                and create lasting impact.
+                is a duly registered entity under the Zimbabwe Company Registration Act, 
+                operating with a solid foundation and compliance record. Our core focus 
+                is delivering reliable and innovative investment solutions tailored to 
+                meet the dynamic needs of our clients.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                We pride ourselves on maintaining the highest standards of corporate 
+                governance and transparency in all our dealings. From mining and energy 
+                to technology and agriculture, we invest in businesses that power growth 
+                and create lasting impact across Africa's most vital economic sectors.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 Our approach combines local expertise with international standards,
@@ -64,12 +77,28 @@ const AboutPage = () => {
                 transforms communities and industries that create sustainable employment.
               </p>
 
+              {/* Company Highlights */}
+              <div className="space-y-3 mb-8">
+                {companyHighlights.map((highlight, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                    className="flex items-center gap-3"
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
+                    <span className="text-muted-foreground">{highlight}</span>
+                  </motion.div>
+                ))}
+              </div>
+
               {/* Mission & Vision Cards */}
               <div className="grid sm:grid-cols-2 gap-4">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
                   className="p-6 rounded-xl border border-accent/20 bg-accent/5"
                 >
                   <Target className="w-8 h-8 text-accent mb-4" />
@@ -85,7 +114,7 @@ const AboutPage = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
+                  transition={{ duration: 0.5, delay: 0.7 }}
                   className="p-6 rounded-xl border border-accent/20 bg-accent/5"
                 >
                   <Eye className="w-8 h-8 text-accent mb-4" />
@@ -100,46 +129,55 @@ const AboutPage = () => {
               </div>
             </motion.div>
 
-            {/* Right Content - Stats */}
+            {/* Right Content - Company Info Cards */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="relative"
+              className="space-y-6"
             >
-              <div className="relative aspect-square max-w-md mx-auto">
-                {/* Decorative rings */}
-                <div className="absolute inset-0 rounded-full border border-accent/10" />
-                <div className="absolute inset-4 rounded-full border border-accent/10" />
-                <div className="absolute inset-8 rounded-full border border-accent/20" />
-                <div className="absolute inset-12 rounded-full border border-accent/20" />
-                
-                {/* Center content */}
-                <div className="absolute inset-16 rounded-full bg-accent flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-accent-foreground font-display text-4xl font-bold">15+</div>
-                    <div className="text-accent-foreground/80 text-sm font-medium">Years of Excellence</div>
+              {/* Established Card */}
+              <div className="p-6 rounded-xl border border-border bg-card/50">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <Calendar className="w-6 h-6 text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">Established</h4>
+                    <p className="text-2xl font-display font-bold text-accent">April 2022</p>
                   </div>
                 </div>
+                <p className="text-sm text-muted-foreground">
+                  Incorporated under the Companies and Other Business Entities Act [Chapter 24:31]
+                </p>
+              </div>
 
-                {/* Floating elements */}
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                  className="absolute top-8 right-8 p-3 rounded-lg bg-card border border-border shadow-lg"
-                >
-                  <div className="text-accent font-bold">100+</div>
-                  <div className="text-xs text-muted-foreground">Projects</div>
-                </motion.div>
+              {/* Registration Card */}
+              <div className="p-6 rounded-xl border border-border bg-card/50">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <Building className="w-6 h-6 text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">Legal Entity</h4>
+                    <p className="text-lg font-medium text-accent">Private Limited Company</p>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Registered in Harare, Zimbabwe with full legal compliance
+                </p>
+              </div>
 
-                <motion.div
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 3.5, repeat: Infinity }}
-                  className="absolute bottom-12 left-4 p-3 rounded-lg bg-card border border-border shadow-lg"
-                >
-                  <div className="text-accent font-bold">10+</div>
-                  <div className="text-xs text-muted-foreground">Sectors</div>
-                </motion.div>
+              {/* Stats Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 rounded-lg border border-border bg-card/30 text-center">
+                  <div className="text-2xl font-display font-bold text-accent">10+</div>
+                  <div className="text-xs text-muted-foreground">Business Sectors</div>
+                </div>
+                <div className="p-4 rounded-lg border border-border bg-card/30 text-center">
+                  <div className="text-2xl font-display font-bold text-accent">3</div>
+                  <div className="text-xs text-muted-foreground">Directors</div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -148,7 +186,7 @@ const AboutPage = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
           >
             <h3 className="font-display text-2xl font-bold text-foreground text-center mb-10">
               Our Core Values
@@ -159,7 +197,7 @@ const AboutPage = () => {
                   key={value.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+                  transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
                   className="group p-6 rounded-xl border border-border bg-card/50 hover:border-accent/30 hover:bg-accent/5 transition-all duration-300 text-center"
                 >
                   <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-colors">
