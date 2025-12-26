@@ -71,7 +71,7 @@ export const Navbar = () => {
               </Link>
             ))}
             <Link
-              to="/contact"
+              to="/partner"
               className="px-6 py-2.5 bg-accent text-accent-foreground font-semibold text-sm rounded-lg hover:bg-gold-dark transition-all duration-300 hover:-translate-y-0.5"
             >
               Partner With Us
@@ -125,7 +125,7 @@ export const Navbar = () => {
                   transition={{ delay: 0.6 }}
                 >
                   <Link
-                    to="/contact"
+                    to="/partner"
                     onClick={() => setIsOpen(false)}
                     className="block mx-4 mt-4 px-6 py-3 bg-accent text-accent-foreground font-semibold text-center rounded-lg"
                   >
