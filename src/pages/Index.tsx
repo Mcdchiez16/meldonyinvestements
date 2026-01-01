@@ -165,25 +165,6 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.button initial={{
-        opacity: 0
-      }} animate={{
-        opacity: 1
-      }} transition={{
-        delay: 1
-      }} onClick={() => {
-        document.getElementById('about-section')?.scrollIntoView({ behavior: 'smooth' });
-      }} className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
-          <span className="text-xs text-muted-foreground uppercase tracking-widest">Scroll</span>
-          <motion.div animate={{
-          y: [0, 6, 0]
-        }} transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }} className="w-px h-10 bg-accent/30" />
-        </motion.button>
       </section>
 
       {/* Sectors Strip */}
