@@ -19,7 +19,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    details: ["info@meldonyinvestments.co.zw"],
+    details: ["info@meldonyinvestments.co.zw", "operations@meldonyinvestments.co.zw"],
   },
   {
     icon: Clock,
